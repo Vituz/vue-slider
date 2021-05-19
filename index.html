@@ -27,7 +27,7 @@
         <img :src="images[counter]" alt="">
         <div class="slider">
             <ul>
-            <li v-for="(item, index) in images" @click="selectImg" v-bind:class="bgBlue" v-bind:index="index">
+                <li v-for="(item, index) in images" :class="counter === index ? 'blue' : 'white' " @click="selectImg(index)" >
                                        
                 </li>
             </ul>

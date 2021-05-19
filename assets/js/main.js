@@ -13,7 +13,7 @@ const app = new Vue({
             './assets/img/paesaggio05.jpg',
         ],
 
-        bgBlue: 'blue'
+        bgColor: 'white'
     },
 
     methods:{
@@ -21,6 +21,8 @@ const app = new Vue({
             console.log("Hai cliccato tu previous");
 
             clearInterval(this.setInterval); 
+
+            
 
             if(this.counter == 0){
                 return this.counter = this.images.length-1;
@@ -39,13 +41,13 @@ const app = new Vue({
              return this.counter++;
         },
 
-        selectImg(){
-            console.log(this.counter);
-        }
-
+        selectImg(index){
+            return this.counter = index;
+        },
     },
-    
+
     mounted: function(){
         setInterval(this.next, 3000);
     },
+    
 });
