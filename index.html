@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,36 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-   	 integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-   	 crossorigin="anonymous" />
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Slider</title>
 </head>
+
 <body>
-    
+
     <div id="root">
-        
+
+        <div class="prev" @click="prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+
+        <img :src="images[counter]" alt="">
+        <div class="slider">
+            <ul>
+            <li v-for="(item, index) in images" @click="selectImg" v-bind:class="bgBlue" v-bind:index="index">
+                                       
+                </li>
+            </ul>
+        </div>
+
+        <div class="next" @click="next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+
     </div>
 
 
@@ -27,4 +47,5 @@
     <!-- Main.js -->
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
